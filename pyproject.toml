@@ -31,15 +31,6 @@ Documentation = "https://docs.getpelican.com"
 Funding = "https://donate.getpelican.com/"
 Issues = "https://github.com/bryanwweber/pelican-pagination/issues"
 
-[project.optional-dependencies]
-testing = ["pytest ~=6.0", "pytest-cov ~=2.8"]
-
-[tool.pdm]
-distribution = true
-
-[tool.pdm.dev-dependencies]
-dev = ["ruff>=0.3.2"]
-
 [build-system]
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
@@ -53,3 +44,9 @@ select = [
   "UP",  # pyupgrade
   "RUF", # Ruff rules
 ]
+
+[tool.pdm]
+distribution = true
+
+[tool.pdm.dev-dependencies]
+dev = ["ruff>=0.3.2", "pyright>=1.1.353"]
