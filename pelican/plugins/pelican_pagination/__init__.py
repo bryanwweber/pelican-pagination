@@ -1,6 +1,6 @@
 import logging
-from math import ceil
 import os
+from math import ceil
 
 from pelican import signals
 from pelican.paginator import Page
@@ -61,7 +61,7 @@ class PaginatedWriter(Writer):
         template_name=None,
         override_output=False,
         url=None,
-        **kwargs
+        **kwargs,
     ):
         """Render the template and write the file.
 
