@@ -50,3 +50,11 @@ distribution = true
 
 [tool.pdm.dev-dependencies]
 dev = ["ruff>=0.3.2", "pyright>=1.1.353"]
+
+[tool.pdm.scripts]
+ruff_check_lint = { cmd = "ruff check pelican" }
+ruff_format_lint = { cmd = "ruff format --check pelican" }
+lint = { composite = ["ruff_check_lint", "ruff_format_lint"] }
+ruff_check_format = { cmd = "ruff check --fix pelican" }
+ruff_format_format = { cmd = "ruff format pelican" }
+format = { composite = ["ruff_check_format", "ruff_format_format"] }
