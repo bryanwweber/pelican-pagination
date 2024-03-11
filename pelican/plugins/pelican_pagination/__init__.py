@@ -7,7 +7,6 @@ from pelican.paginator import Page
 from pelican.paginator import Paginator as _Paginator
 from pelican.utils import (
     get_relative_path,
-    is_selected_for_writing,
     path_to_url,
     sanitised_join,
 )
@@ -82,13 +81,7 @@ class PaginatedWriter(Writer):
         :param **kwargs: additional variables to pass to the templates
         """
 
-        if (
-            name is False
-            or name == ""
-            or not is_selected_for_writing(
-                self.settings, os.path.join(self.output_path, name)
-            )
-        ):
+        if name is False or name == "":
             return
         elif not name:
             # other stuff, just return for now
@@ -146,7 +139,7 @@ class PaginatedWriter(Writer):
             }
 
             # generated pages, and write
-            for page_num in range(list(paginators.values())[0].num_pages):
+            for page_num in range(next(iter(paginators.values())).num_pages):
                 paginated_kwargs = kwargs.copy()
                 for key in paginators.keys():
                     paginator = paginators[key]
