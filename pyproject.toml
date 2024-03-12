@@ -58,3 +58,6 @@ lint = { composite = ["ruff_check_lint", "ruff_format_lint"] }
 ruff_check_format = { cmd = "ruff check --fix pelican" }
 ruff_format_format = { cmd = "ruff format pelican" }
 format = { composite = ["ruff_check_format", "ruff_format_format"] }
+
+[tool.pdm.build]
+includes = ["pelican/"]
