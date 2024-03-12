@@ -1,6 +1,6 @@
 [project]
 name = "pelican-pagination"
-version = "2.0.1"
+version = "2.0.1.post1"
 description = "Paginate articles"
 authors = [{ name = "Bryan Weber", email = "bryan.w.weber@gmail.com" }]
 dependencies = ["pelican >=4.5"]
@@ -9,7 +9,7 @@ readme = "README.md"
 license = { text = "BSD-3-Clause" }
 keywords = ["pelican", "plugin", "pagination"]
 classifiers = [
-  "Development Status :: 5 - Stable",
+  "Development Status :: 5 - Production/Stable",
   "Environment :: Console",
   "Framework :: Pelican",
   "Framework :: Pelican :: Plugins",
